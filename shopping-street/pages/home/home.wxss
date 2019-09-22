@@ -38,19 +38,15 @@
   margin-top: 0;
 }
 
-
 .goods-box{
   display: flex;
-  /* flex-wrap: wrap; */
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 .home-goods-item{
-  
+  width: 150px;
+  margin-top: 16rpx;
+  position: relative;
+  padding-bottom: 70rpx;
 }
 
-.goods-box .goods-item{
-  /* flex: 1; */
-}
-
-.goods-box .goods-item .item-img{
-
-}

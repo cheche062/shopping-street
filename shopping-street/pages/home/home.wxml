@@ -2,7 +2,6 @@
 
 <w-swiper list="{{bannerList}}"></w-swiper>
 
-<!-- 
 <view class="recommend">
   <block wx:for="{{recommendList}}" wx:key="index">
     <view class="recommend-item">
@@ -25,6 +24,7 @@
   </view>
 </view>
 
+
 <w-tab-control 
   selectedIndex= "{{currenTabIndex}}" 
   tabListData="{{tabListData}}" 
@@ -33,16 +33,8 @@
 
 <wxs src="./info.wxs" module="foo" />
 
--->
-
-
 <view class="goods-box">
   <block wx:for="{{goods[tabListTitle[currenTabIndex]].list}}" wx:key="index">
-    <!-- <w-goods-item class="home-goods-item" goodsData="{{item}}"></w-goods-item>-->
-
-    <view class="goods-item">
-      <image class="item-img" src="{{item.show.img}}" mode="widthFix"/>
-    </view>
-
+    <w-goods-item class="home-goods-item" goodsData="{{item}}"></w-goods-item>
   </block>
 </view>
