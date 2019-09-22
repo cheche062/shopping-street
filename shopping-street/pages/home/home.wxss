@@ -21,3 +21,36 @@
 .recommend .recommend-item view{
   font-size: 30rpx;
 }
+
+.recommend.fashion .recommend-item{
+  margin-bottom: 20rpx;
+}
+
+.fashion-wrap {
+  
+}
+.fashion-title{
+  text-align: center;
+  padding: 25rpx 0;
+}
+
+.fashion-wrap .fashion {
+  margin-top: 0;
+}
+
+
+.goods-box{
+  display: flex;
+  /* flex-wrap: wrap; */
+}
+.home-goods-item{
+  
+}
+
+.goods-box .goods-item{
+  /* flex: 1; */
+}
+
+.goods-box .goods-item .item-img{
+
+}

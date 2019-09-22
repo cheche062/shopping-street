@@ -1,0 +1,10 @@
+/* components/w-goods-item/w-goods-item.wxss */
+.goods-wrap{
+  
+  flex: 1;
+}
+
+.item-img {
+  width: 300rpx;
+  
+}

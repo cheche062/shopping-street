@@ -1,5 +1,5 @@
 // pages/home/home.js
-import { getMultiData } from "../../service/home"
+import { getMultiData, getGoodsData } from "../../service/home"
 
 Page({
 
@@ -8,7 +8,16 @@ Page({
    */
   data: {
     bannerList: [],
-    recommendList: []
+    recommendList: [],
+    fashionList: [],
+    tabListData: ["流行", "新款", "精选"],
+    tabListTitle: ["pop", "new", "sell"],
+    goods: {
+      pop: {page: 0, list: []},
+      new: {page: 0, list: []},
+      sell: {page: 0, list: []}
+    },
+    currenTabIndex: 0
   },
 
   /**
@@ -18,13 +27,53 @@ Page({
     getMultiData().then(res => {
       let data = res.data.data;
       console.log(data)
-
+      
       let {banner, dKeyword, keywords, recommend} = data;
       this.setData({
         bannerList: banner.list,
-        recommendList: [...recommend.list]
+        recommendList: [...recommend.list],
+        fashionList: [...recommend.list, ...recommend.list]
       })
     })
+    
+    this._getGoodsData(this.data.currenTabIndex)
+  },
+
+  _getGoodsData(index) {
+    let type = this.data.tabListTitle[index];
+    let good = this.data.goods[type];
+    let page = good.page + 1;
+    getGoodsData(type, page).then(res => {
+      let data = res.data.data;
+      let typeKey = `goods.${type}.list`;
+      let pagekey = `goods.${type}.page`;
+
+      this.setData({
+        [typeKey]: [...good.list, ...data.list],
+        [pagekey]: page
+      })
+
+      console.log(data.list)
+    })
+  },
+
+  handleClick(event) {
+    let index = event.detail.index;
+    if (this.data.currenTabIndex == index) return;
+    this.setData({
+      currenTabIndex: index
+    });
+
+    if (!this.data.goods[this.data.tabListTitle[this.data.currenTabIndex]].list.length) {
+      this._getGoodsData(event.detail.index);
+    }
+  },
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+    console.log("add")
+    this._getGoodsData(this.data.currenTabIndex)
   },
 
   /**
@@ -59,13 +108,6 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
 
   },
 

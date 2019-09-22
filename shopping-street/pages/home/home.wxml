@@ -2,11 +2,47 @@
 
 <w-swiper list="{{bannerList}}"></w-swiper>
 
+<!-- 
 <view class="recommend">
   <block wx:for="{{recommendList}}" wx:key="index">
     <view class="recommend-item">
       <image src="{{item.image}}" />
       <view>{{item.title}}</view>
     </view>
+  </block>
+</view>
+
+
+<view class="fashion-wrap">
+  <view class="fashion-title">本周流行</view>
+  <view class="recommend fashion">
+    <block wx:for="{{fashionList}}" wx:key="index">
+      <view class="recommend-item">
+        <image src="{{item.image}}" />
+        <view>{{item.title}}</view>
+      </view>
+    </block>
+  </view>
+</view>
+
+<w-tab-control 
+  selectedIndex= "{{currenTabIndex}}" 
+  tabListData="{{tabListData}}" 
+  bind:onChangeTabItem="handleClick"
+></w-tab-control>
+
+<wxs src="./info.wxs" module="foo" />
+
+-->
+
+
+<view class="goods-box">
+  <block wx:for="{{goods[tabListTitle[currenTabIndex]].list}}" wx:key="index">
+    <!-- <w-goods-item class="home-goods-item" goodsData="{{item}}"></w-goods-item>-->
+
+    <view class="goods-item">
+      <image class="item-img" src="{{item.show.img}}" mode="widthFix"/>
+    </view>
+
   </block>
 </view>

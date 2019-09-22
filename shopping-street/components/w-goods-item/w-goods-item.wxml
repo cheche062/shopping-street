@@ -1,0 +1,5 @@
+<view class="goods-wrap">
+  <image class="item-img" src="{{goodsData.show.img}}" mode="widthFix"/>
+</view>
+
+

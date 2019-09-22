@@ -1,0 +1,6 @@
+module.exports = {
+  name: "cheche",
+  fn: function(str) {
+    return str.slice(0, 5)
+  }
+}

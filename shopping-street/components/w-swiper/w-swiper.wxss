@@ -1,1 +1,4 @@
 /* components/w-swiper.wxss */
+.slide-image {
+  width: 100%;
+}
