@@ -33,7 +33,6 @@
 
     <w-list-view class="list-view-1" list="{{orderList}}"></w-list-view>
     <w-list-view class="list-view-1" list="{{serviceList}}"></w-list-view>
-
       
 </view>
   
