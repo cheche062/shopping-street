@@ -1,0 +1,9 @@
+<!--pages/profile/w-list-view/w-list-view.wxml-->
+<view class="my-list1">
+    <block wx:for="{{list}}" wx:key="{{index}}">
+        <view class="list-item">
+            <image src="{{'/assets/images/profile/' + item.icon}}"></image>
+            <text>{{item.info}}</text>
+        </view>
+    </block>
+</view>

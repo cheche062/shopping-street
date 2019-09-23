@@ -1,1 +1,75 @@
 /* pages/profile/profile.wxss */
+.profile{
+    background: #f8f8f8;
+}
+
+.profile .header{
+    height: 170rpx;
+    background: #ff5777;
+    color: #fff;
+    display: flex;
+}
+.profile .header .header-wrap{
+    background-color: #fff;
+    border-radius: 50%;
+    width: 140rpx;
+    height: 140rpx;
+    margin: 0 10px;
+}
+.profile .header .header-wrap image{
+    width: 140rpx;
+    height: 140rpx;
+    border-radius: 70rpx;
+}
+.profile .header .header-detail{
+    flex: 1;
+    margin-top: 20rpx;
+}
+
+.profile .header .header-arrow {
+    width: 80rpx;
+    text-align: center;
+}
+
+.profile .header .header-detail .login{
+    font-size: 36rpx;
+}
+
+.profile .header .header-detail .phone{
+    font-size: 28rpx;
+    margin-top: 10rpx;
+}
+.phone image {
+    width: 36rpx;
+    height: 36rpx;
+    vertical-align: middle;
+    position: relative;
+    bottom: 4rpx;
+}
+.header-arrow {
+    height: 120rpx;
+    line-height: 120rpx;
+}
+
+.my-info{
+    display: flex;
+    font-size: 28rpx;
+}
+.my-info .info-item{
+    flex: 1;
+    text-align: center;
+    margin-right: 10rpx;
+    background: white;
+    padding: 80rpx 0;
+}
+
+.my-info .info-item text{
+    color: #ff5f3e;
+    font-size: 40rpx;
+    font-weight: 700;
+}
+
+.list-view-1{
+    display: block;
+    margin-top: 30rpx;
+}

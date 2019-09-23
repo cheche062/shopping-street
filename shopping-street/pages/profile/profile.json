@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "w-list-view" : "./w-list-view/w-list-view"
+  },
   "navigationBarTitleText": "我的"
 }

@@ -1,0 +1,25 @@
+/* pages/profile/w-list-view/w-list-view.wxss */
+
+.my-list1{
+    background: white;
+}
+.my-list1 .list-item{
+    padding: 30rpx 0;
+    padding-left: 10rpx;
+    border-bottom: 1rpx solid #f8f8f8;
+    margin-left: 50rpx
+}
+
+.list-item:last-child{
+    border-bottom: none;
+}
+
+.list-item image {
+    width: 40rpx;
+    height: 40rpx;
+    vertical-align: middle;
+}
+.list-item text{
+    vertical-align: middle;
+    margin-left: 10rpx;
+}
