@@ -29,7 +29,11 @@
   selectedIndex= "{{currenTabIndex}}" 
   tabListData="{{tabListData}}" 
   bind:onChangeTabItem="handleClick"
+  class="{{isTabFixed ? 'fixed' : ''}}"
+  id="tab-control"
 ></w-tab-control>
+
+<w-tab-control tabListData="{{tabListData}}" wx:if="{{isTabFixed}}"/>
 
 <wxs src="./info.wxs" module="foo" />
 

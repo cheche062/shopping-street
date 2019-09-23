@@ -50,3 +50,12 @@
   padding-bottom: 70rpx;
 }
 
+.fixed{
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-color: white;
+  z-index: 1;
+  padding-bottom: 10rpx;
+}

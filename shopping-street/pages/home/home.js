@@ -13,11 +13,13 @@ Page({
     tabListData: ["流行", "新款", "精选"],
     tabListTitle: ["pop", "new", "sell"],
     goods: {
-      pop: {page: 0, list: []},
-      new: {page: 0, list: []},
-      sell: {page: 0, list: []}
+      pop: { page: 0, list: [] },
+      new: { page: 0, list: [] },
+      sell: { page: 0, list: [] }
     },
-    currenTabIndex: 0
+    currenTabIndex: 0,
+    isTabFixed: false,
+    tabScrolTop: 534
   },
 
   /**
@@ -27,15 +29,15 @@ Page({
     getMultiData().then(res => {
       let data = res.data.data;
       console.log(data)
-      
-      let {banner, dKeyword, keywords, recommend} = data;
+
+      let { banner, dKeyword, keywords, recommend } = data;
       this.setData({
         bannerList: banner.list,
         recommendList: [...recommend.list],
         fashionList: [...recommend.list, ...recommend.list]
       })
     })
-    
+
     this._getGoodsData(this.data.currenTabIndex)
   },
 
@@ -53,7 +55,7 @@ Page({
         [pagekey]: page
       })
 
-      console.log(data.list)
+      // console.log(data.list)
     })
   },
 
@@ -87,7 +89,23 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    setTimeout(() => {
+      console.log('kaishi ');
+      wx.createSelectorQuery().select("#tab-control").boundingClientRect(rect => {
+        this.data.tabScrolTop = rect.top;
+        console.log(rect.top);
+      }).exec()
+    }, 2000)
+  },
 
+  onPageScroll(options) {
+    let isFixed = options.scrollTop >= this.data.tabScrolTop;
+    if (this.data.isTabFixed != isFixed) {
+      console.log("change")
+      this.setData({
+        isTabFixed: isFixed
+      })
+    }
   },
 
   /**
@@ -116,5 +134,6 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+
 })
