@@ -1,1 +1,25 @@
 /* pages/category/category.wxss */
+.category{
+    display: flex;
+    height: 100%;
+}
+
+.menu{
+    width: 30%;
+    text-align: center;
+    font-size: 28rpx;
+    background: #f6f6f6;
+}
+
+.menu .item{
+    height: 100rpx;
+    line-height: 100rpx;
+}
+
+.menu .item.active{
+    color: #f55777;
+  font-weight: 700;
+  background: #fff;
+  border-left: 6rpx solid #f55777;
+    
+}
