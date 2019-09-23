@@ -26,9 +26,6 @@
   margin-bottom: 20rpx;
 }
 
-.fashion-wrap {
-  
-}
 .fashion-title{
   text-align: center;
   padding: 25rpx 0;
