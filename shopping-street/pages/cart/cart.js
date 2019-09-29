@@ -5,7 +5,39 @@ Page({
    * 页面的初始数据
    */
   data: {
+    imgSrc: ""
+  },
 
+  uploadImg() {
+    wx.chooseImage({
+      count: 1,
+      sizeType: ['original', 'compressed'],
+      sourceType: ['album', 'camera'],
+      success: (res) =>  {
+        // tempFilePath可以作为img标签的src属性显示图片
+        const tempFilePaths = res.tempFilePaths[0]
+        console.log(tempFilePaths);
+
+        wx.uploadFile({
+          url: "",
+          filePath: tempFilePaths,
+          name: "fileup",
+          success: (res)=>{
+            let data = res.data;
+            console.log(data);
+          },
+
+          fail: (res)=>{
+            console.log("fail");
+          },
+        })
+
+
+        this.setData({
+          imgSrc: tempFilePaths
+        })
+      }
+    })
   },
 
   /**
